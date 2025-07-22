@@ -20,9 +20,9 @@ CREATE INDEX idx_users_email ON users(email);
 -- Données de test (optionnel)
 -- Mot de passe : "password123"
 INSERT INTO users (name, email, password) VALUES 
-('John Doe', 'john@example.com', '$2y$10$8K8O/F1k5FZ0J0vN4.6Q5e6ZQJZF6F6qF5J0vN4.6Q5e6ZQJZF6F6q'),
-('Jane Smith', 'jane@example.com', '$2y$10$8K8O/F1k5FZ0J0vN4.6Q5e6ZQJZF6F6qF5J0vN4.6Q5e6ZQJZF6F6q'),
-('Admin User', 'admin@example.com', '$2y$10$8K8O/F1k5FZ0J0vN4.6Q5e6ZQJZF6F6qF5J0vN4.6Q5e6ZQJZF6F6q');
+('John Doe', 'john@example.com', '$2y$10$/vD8hGtkBJsAae2TiSkbV.jg0bnNDAFv8xBewH14.OKvR0PpeVbq6'),
+('Jane Smith', 'jane@example.com', '$2y$10$/vD8hGtkBJsAae2TiSkbV.jg0bnNDAFv8xBewH14.OKvR0PpeVbq6'),
+('Admin User', 'admin@example.com', '$2y$10$/vD8hGtkBJsAae2TiSkbV.jg0bnNDAFv8xBewH14.OKvR0PpeVbq6');
 
 -- Table de messages de contact (exemple d'extension)
 CREATE TABLE contact_messages (
