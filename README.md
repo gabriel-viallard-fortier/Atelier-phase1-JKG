@@ -261,7 +261,6 @@ Modifiez ces variables dans `public/assets/css/style.css` pour changer l'apparen
 Le schéma inclut :
 - Table `users` : Gestion des utilisateurs
 - Table `contact_messages` : Messages de contact
-- Table `logs` : Logs de l'application
 - Table `sessions` : Sessions alternatives
 - Table `settings` : Configuration
 

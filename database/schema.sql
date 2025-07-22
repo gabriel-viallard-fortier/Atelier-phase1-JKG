@@ -34,25 +34,6 @@ CREATE TABLE contact_messages (
     read_at TIMESTAMP NULL
 );
 
--- Table de logs (pour le débogage)
-CREATE TABLE logs (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    level ENUM('debug', 'info', 'warning', 'error') DEFAULT 'info',
-    message TEXT NOT NULL,
-    context JSON,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- Table de sessions (alternative aux sessions PHP fichiers)
-CREATE TABLE sessions (
-    id VARCHAR(128) PRIMARY KEY,
-    user_id INT,
-    data TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    expires_at TIMESTAMP NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
-);
 
 -- Table de paramètres de configuration
 CREATE TABLE settings (
