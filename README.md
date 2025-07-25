@@ -1,6 +1,6 @@
 # PHP MVC Starter - Boilerplate Procédural
 
-Un boilerplate PHP avec architecture MVC développé en approche procédurale. Ce starter kit vous permet de créer rapidement des applications web avec une structure claire et des fonctionnalités de base intégrées.
+ Ce starter kit vous permet de créer rapidement des applications web avec une structure claire et des fonctionnalités de base intégrées.
 
 ## 🚀 Fonctionnalités
 
