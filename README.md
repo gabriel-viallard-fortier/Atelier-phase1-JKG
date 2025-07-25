@@ -286,3 +286,97 @@ Pour toute question ou problème :
 ---
 
 **Développé avec ❤️ en PHP procédural**
+
+
+
+/**
+ * Section importante du code
+ * ================================
+ */
+```
+
+## ⚠️ Gestion des erreurs
+
+### Codes de réponse HTTP
+```php
+// 404 - Page non trouvée
+function load_404() {
+    http_response_code(404);
+    load_view('errors/404');
+}
+
+// 403 - Accès interdit
+function require_login() {
+    if (!is_logged_in()) {
+        http_response_code(403);
+        redirect('auth/login');
+    }
+}
+```
+
+### Messages flash
+```php
+// Types standardisés
+set_flash('success', 'Opération réussie');
+set_flash('error', 'Une erreur est survenue');
+set_flash('warning', 'Attention à...');
+set_flash('info', 'Information importante');
+```
+
+### Validation des données
+```php
+function validate_user_data($data) {
+    $errors = [];
+    
+    if (empty($data['name'])) {
+        $errors[] = 'Le nom est obligatoire';
+    }
+    
+    if (!validate_email($data['email'])) {
+        $errors[] = 'Email invalide';
+    }
+    
+    if (strlen($data['password']) < 8) {
+        $errors[] = 'Mot de passe trop court';
+    }
+    
+    return $errors;
+}
+```
+
+
+## 🔒 Sécurité
+
+### Protection XSS
+- **Échappement systématique** des données d'affichage
+- **Fonctions helpers** : `esc()`, `e()`
+
+```php
+// ✅ Correct
+<h1><?php e($title); ?></h1>
+<p><?php echo esc($user_input); ?></p>
+
+// ❌ Dangereux
+<h1><?php echo $title; ?></h1>
+```
+
+### Protection CSRF
+- **Token CSRF** pour tous les formulaires
+- **Vérification** côté serveur
+
+```php
+<!-- Vue -->
+<form method="POST">
+    <input type="hidden" name="csrf_token" value="<?php echo csrf_token(); ?>">
+    <!-- autres champs -->
+</form>
+
+// Contrôleur
+if (is_post()) {
+    if (!verify_csrf_token(post('csrf_token'))) {
+        set_flash('error', 'Token CSRF invalide');
+        return;
+    }
+    // Traitement sécurisé
+}
+```
