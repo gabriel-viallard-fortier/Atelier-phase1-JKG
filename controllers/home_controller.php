@@ -73,3 +73,15 @@ function home_profile() {
     
     load_view_with_layout('home/profile', $data);
 } 
+
+/**
+ * Page test
+ */
+function home_test() {
+    $data = [
+        'title' => 'Page test',
+        'message' => 'Bienvenue sur votre page test',
+    ];
+    
+    load_view_with_layout('home/test', $data);
+} 
