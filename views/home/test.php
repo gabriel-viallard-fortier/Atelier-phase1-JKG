@@ -8,6 +8,6 @@
     <div class="container">
         <h2>Test</h2>
         <p><?php e($message); ?></p>
-        <p> Test fatima </p>
+        <p> Test fatima et morad </p>
     </div>
 </section> 
