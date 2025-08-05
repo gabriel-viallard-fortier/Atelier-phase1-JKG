@@ -23,7 +23,7 @@
                     <li><a href="<?php echo url('auth/login'); ?>">Connexion</a></li>
                     <li><a href="<?php echo url('auth/register'); ?>">Inscription</a></li>
                     <li><a href="<?php echo url('auth/forgot-password'); ?>">Mot de passe oublié</a></li>
-                    <li><a href="<?php echo url('auth/login'); ?>">Test Fatima</a></li>
+                    <li><a href="<?php echo url('auth/test'); ?>"></a>test morad et fatima</li>
                 <?php endif; ?>
             </ul>
         </nav>
