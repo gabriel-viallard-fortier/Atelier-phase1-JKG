@@ -1,7 +1,6 @@
 <div class="auth-container">
     <div class="auth-card">
         <div class="auth-header">
-            <h1><?php e($title); ?></h1>
             <p>Ajouter un jeu</p>
         </div>
         
@@ -28,19 +27,13 @@
             <div class="form-group">
                 <label for="stock">Stock</label>
                 <input type="number" id="stock" name="stock" required
-                       placeholder="Stock">
+                       placeholder="Stock" min="1">
             </div>
             
             <div class="form-group">
                 <label for="editor">Éditeur</label>
                 <input type="text" id="editor" name="editor" required
                        placeholder="Éditeur">
-            </div>
-
-            <div class="form-group">
-                <label for="duration">Durée</label>
-                <input type="text" id="duration" name="duration" required
-                        placeholder="Durée">
             </div>
             
             <div class="form-group">
@@ -68,8 +61,8 @@
 
             <div class="form-group">
                 <label for="descritpion">Description</label>
-                <text-area id="description" name="descrition"
-                        placeholder="Description">
+                <textarea id="description" name="descrition"
+                        placeholder="Description"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary btn-full">
