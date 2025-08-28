@@ -1,4 +1,7 @@
 <?php
+//TODO delete
+require_once '../vendor/autoload.php';
+
 /**
  * Point d'entrée principal de l'application PHP MVC
  * 
@@ -21,6 +24,7 @@ require_once INCLUDE_PATH . '/helpers.php';
 
 // Charger les modèles
 require_once MODEL_PATH . '/user_model.php';
+require_once MODEL_PATH . '/media_model.php';
 
 // Activer l'affichage des erreurs en développement
 // À désactiver en production
@@ -28,4 +32,4 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Lancer le système de routing
-dispatch(); 
+dispatch();
