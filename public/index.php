@@ -1,7 +1,4 @@
 <?php
-//TODO delete
-require_once '../vendor/autoload.php';
-
 /**
  * Point d'entrée principal de l'application PHP MVC
  * 
