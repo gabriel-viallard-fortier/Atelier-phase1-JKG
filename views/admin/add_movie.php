@@ -1,0 +1,83 @@
+<div class="auth-container">
+    <div class="auth-card">
+        <div class="auth-header">
+            <h1><?php e($title); ?></h1>
+            <p>Ajouter un film</p>
+        </div>
+        
+        <form method="POST" class="auth-form">
+            
+            <div class="form-group">
+                <label for="title">Titre</label>
+                <input type="text" id="title" name="title" required 
+                       placeholder="Titre du film">
+            </div>
+            
+            <div class="form-group">
+                <label for="genre">Genre</label>
+                <select id="genre" name="genre" required>
+                    <option value="">Genre du film</option>
+                    <option value="action">Action</option>
+                    <option value="comedy">Comedie</option>
+                    <option value="documentary">Documentaire</option>
+                    <option value="drama">Drame</option>
+                    <option value="fantasy">Fantaisie</option>
+                    <option value="horror">Horreur</option>
+                    <option value="musical">Musical</option>
+                    <option value="mystery">Mystère</option>
+                    <option value="romance">Romance</option>
+                    <option value="science fiction">Science Fiction</option>
+                    <option value="thriller">Suspense</option>
+                    <option value="western">Western</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="stock">Stock</label>
+                <input type="number" id="stock" name="stock" required
+                       placeholder="Stock">
+            </div>
+            
+            <div class="form-group">
+                <label for="director">Réalisateur</label>
+                <input type="text" id="director" name="director" required
+                       placeholder="Réalisateur">
+            </div>
+
+            <div class="form-group">
+                <label for="duration">Durée</label>
+                <input type="text" id="duration" name="duration" required
+                        placeholder="Durée">
+            </div>
+            
+            <div class="form-group">
+                <label for="published-year">Date de publication</label>
+                <input type="text" id="published-year" name="published-year" required
+                        placeholder="Date de publication">
+            </div>
+
+            <div class="form-group">
+                <label for="synopsis">Synopsis</label>
+                <text-area id="synopsis" name="synopsis" required
+                        placeholder="Synopsis du film">
+            </div>
+
+            <div class="form-group">
+                <label for="certification">Certification</label>
+                <select id="certification" name="certification">
+                    <option value="">Certification</option>
+                    <option value="everyone">Tous publics</option>
+                    <option value="-12">-12</option>
+                    <option value="-16">-16</option>
+                    <option value="-18">-18</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">
+                <i class="fas fa-user-plus"></i>
+                Ajouter
+            </button>
+        </form>
+        
+    </div>
+</div> 
