@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS medias (
 );
 
 CREATE TABLE IF NOT EXISTS books (
-    id INT NOT NULL,
+    id INT NOT NULL UNIQUE,
     title VARCHAR(200) NOT NULL CHECK (LENGTH(title) > 0 AND LENGTH(title) <= 200),
     genre ENUM('Action', 'Comedy', 'Documentary', 'Drama', 'Fantasy', 'Horror', 'Musical', 'Mystery', 'Romance', 'Science Fiction', 'Thriller', 'Western') NOT NULL,
     stock INT NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS books (
 
 
 CREATE TABLE IF NOT EXISTS movies (
-    id INT NOT NULL,
+    id INT NOT NULL UNIQUE,
     title VARCHAR(200) NOT NULL CHECK (LENGTH(title) > 0 AND LENGTH(title) <= 200),
     genre ENUM('Action', 'Comedy', 'Documentary', 'Drama', 'Fantasy', 'Horror', 'Musical', 'Mystery', 'Romance', 'Science Fiction', 'Thriller', 'Western') NOT NULL,
     stock INT NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS movies (
 );
 
 CREATE TABLE IF NOT EXISTS games (
-    id INT NOT NULL,
+    id INT NOT NULL UNIQUE,
     title VARCHAR(200) NOT NULL CHECK (LENGTH(title) > 0 AND LENGTH(title) <= 200),
     genre ENUM('FPS', 'MMO', 'MOBA', 'RPG'),
     stock INT NOT NULL,

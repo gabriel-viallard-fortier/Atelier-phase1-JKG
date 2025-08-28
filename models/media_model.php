@@ -1,7 +1,18 @@
 <?php
-function get_filtered_medias()
+// TODO filter for real
+function get_filtered_medias(): array
 {
-    $sql = 'SELECT * FROM medias LEFT JOIN movies m ON m.id = id';
+    $sql = '
+        SELECT *, 
+        COALESCE(medias.id, b.id, m.id, g.id) AS id,
+        COALESCE(b.title, m.title, g.title) AS title,
+        COALESCE(b.genre, m.genre, g.genre) AS genre,
+        COALESCE(b.published_year, m.published_year) AS published_year,
+        COALESCE(b.stock, m.stock, g.stock) AS stock FROM medias 
+        LEFT JOIN movies m ON m.id = medias.id
+        LEFT JOIN books b ON b.id = medias.id
+        LEFT JOIN games g ON g.id = medias.id
+        LIMIT 20';
     $medias = db_select($sql);
-    var_dump($medias);
+    return $medias;
 }
