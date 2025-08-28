@@ -6,6 +6,7 @@
         </div>
         
         <form method="POST" class="auth-form">
+            <input type="hidden" name="csrf_token" value="<?php echo csrf_token(); ?>">
             
             <div class="form-group">
                 <label for="title">Titre</label>
