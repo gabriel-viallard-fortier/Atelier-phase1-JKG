@@ -2,7 +2,26 @@
 // TODO filter for real
 function get_filtered_medias(): array
 {
-    $sql = '
+    $default = ['medias' => [], 'current_page' => 1, 'pages' => 1];
+    $current_page = $_GET['page'] ?? 1;
+    if (!filter_var($current_page, FILTER_VALIDATE_INT)) {
+        set_flash('error', 'Numéro de page invalide');
+        return $default;
+    }
+    $current_page = (int) $current_page;
+    if ($current_page <= 0) {
+        set_flash('error', 'Numéro de page invalide');
+        return $default;
+    }
+    $per_page = 5;
+    $count = get_media_count();
+    $nb_pages = ceil($count / $per_page);
+    if ($current_page > $nb_pages) {
+        set_flash('error', 'Numéro de page invalide');
+        return $default;
+    }
+    $offset = ($current_page - 1) * $per_page;
+    $sql = "
         SELECT *, 
         COALESCE(medias.id, b.id, m.id, g.id) AS id,
         COALESCE(b.title, m.title, g.title) AS title,
@@ -12,7 +31,17 @@ function get_filtered_medias(): array
         LEFT JOIN movies m ON m.id = medias.id
         LEFT JOIN books b ON b.id = medias.id
         LEFT JOIN games g ON g.id = medias.id
-        LIMIT 20';
+        LIMIT $per_page OFFSET $offset";
     $medias = db_select($sql);
-    return $medias;
+    return [
+        "medias" => $medias,
+        "pages" => $nb_pages,
+        "current_page" => $current_page
+    ];
+}
+
+function get_media_count(): int
+{
+    $sql = 'SELECT COUNT(id) FROM medias';
+    return db_connect()->query($sql)->fetch(PDO::FETCH_NUM)[0];
 }
