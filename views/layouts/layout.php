@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo isset($title) ? esc($title) . ' - ' . APP_NAME : APP_NAME; ?></title>
     <link rel="stylesheet" href="<?php echo url('assets/css/style.css'); ?>">
-    <?php foreach ($stylesheets as $style_path): ?>
-        <link rel="stylesheet" href="<?php echo url($style_path); ?>">
-    <?php endforeach; ?>
+    <?php if (isset($stylesheets)): ?>
+        <?php foreach ($stylesheets as $style_path): ?>
+            <link rel="stylesheet" href="<?php echo url($style_path); ?>">
+        <?php endforeach; ?>
+    <?php endif; ?>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 

@@ -60,3 +60,7 @@ phpunit.xml.bak
 # Minified files
 *.min.css
 *.min.js 
+
+config/database.php
+composer.*
+vendor

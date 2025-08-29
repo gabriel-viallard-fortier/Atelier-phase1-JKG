@@ -1,12 +1,12 @@
 <div class="auth-container">
     <div class="auth-card">
         <div class="auth-header">
-            <h1><?php e($title); ?></h1>
             <p>Ajouter un livre</p>
         </div>
         
         <form method="POST" class="auth-form">
-            
+            <input type="hidden" name="csrf_token" value="<?php echo csrf_token(); ?>">
+
             <div class="form-group">
                 <label for="title">Titre</label>
                 <input type="text" id="title" name="title" required 
@@ -35,7 +35,7 @@
             <div class="form-group">
                 <label for="stock">Stock</label>
                 <input type="number" id="stock" name="stock" required
-                       placeholder="Stock">
+                       placeholder="Stock" min="1">
             </div>
             
             <div class="form-group">
@@ -47,25 +47,25 @@
             <div class="form-group">
                 <label for="isbn">ISBN</label>
                 <input type="text" id="isbn" name="isbn" required
-                        placeholder="ISBN">
+                        placeholder="ISBN" min="0">
             </div>
             
             <div class="form-group">
                 <label for="pages">Pages</label>
                 <input type="number" id="pages" name="pages" required
-                        placeholder="Nombre de pages">
+                        placeholder="Nombre de pages" min="1" max="9999">
             </div>
 
             <div class="form-group">
                 <label for="published-year">Date de publication</label>
-                <input type="text" id="published-year" name="published-year" required
-                        placeholder="Date de publication">
+                <input type="number" id="published-year" name="published-year" required
+                        placeholder="Date de publication" min="1900">
             </div>
 
             <div class="form-group">
                 <label for="summary">Résumé</label>
-                <text-area id="summary" name="summary" required
-                        placeholder="Résumé du livre">
+                <textarea id="summary" name="summary" required
+                        placeholder="Résumé du livre"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary btn-full">

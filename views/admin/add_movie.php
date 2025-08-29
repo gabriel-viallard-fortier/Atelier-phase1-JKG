@@ -1,18 +1,18 @@
 <div class="auth-container">
     <div class="auth-card">
         <div class="auth-header">
-            <h1><?php e($title); ?></h1>
             <p>Ajouter un film</p>
         </div>
-        
+
         <form method="POST" class="auth-form">
-            
+            <input type="hidden" name="csrf_token" value="<?php echo csrf_token(); ?>">
+
             <div class="form-group">
                 <label for="title">Titre</label>
-                <input type="text" id="title" name="title" required 
-                       placeholder="Titre du film">
+                <input type="text" id="title" name="title" required
+                    placeholder="Titre du film">
             </div>
-            
+
             <div class="form-group">
                 <label for="genre">Genre</label>
                 <select id="genre" name="genre" required>
@@ -31,35 +31,35 @@
                     <option value="western">Western</option>
                 </select>
             </div>
-            
+
             <div class="form-group">
                 <label for="stock">Stock</label>
                 <input type="number" id="stock" name="stock" required
-                       placeholder="Stock">
-            </div>
-            
-            <div class="form-group">
-                <label for="director">Réalisateur</label>
-                <input type="text" id="director" name="director" required
-                       placeholder="Réalisateur">
+                    placeholder="Stock" min="1">
             </div>
 
             <div class="form-group">
-                <label for="duration">Durée</label>
-                <input type="text" id="duration" name="duration" required
-                        placeholder="Durée">
+                <label for="director">Réalisateur</label>
+                <input type="text" id="director" name="director" required
+                    placeholder="Réalisateur">
             </div>
-            
+
+            <div class="form-group">
+                <label for="duration">Durée (minutes)</label>
+                <input type="number" id="duration" name="duration" required
+                    placeholder="Durée" min="1" max="999">
+            </div>
+
             <div class="form-group">
                 <label for="published-year">Date de publication</label>
-                <input type="text" id="published-year" name="published-year" required
-                        placeholder="Date de publication">
+                <input type="number" id="published-year" name="published-year" required
+                    placeholder="Date de publication" min="1900">
             </div>
 
             <div class="form-group">
                 <label for="synopsis">Synopsis</label>
-                <text-area id="synopsis" name="synopsis" required
-                        placeholder="Synopsis du film">
+                <textarea id="synopsis" name="synopsis" required
+                    placeholder="Synopsis du film"></textarea>
             </div>
 
             <div class="form-group">

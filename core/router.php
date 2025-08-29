@@ -17,6 +17,7 @@ function parse_request_url() {
     $controller = $url_parts[0] ?? 'home';
     $action = $url_parts[1] ?? 'index';
     $params = array_slice($url_parts, 2);
+
     
     return [
         'controller' => $controller,
