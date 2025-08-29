@@ -2,11 +2,11 @@
     <?php foreach ($medias as $media): ?>
         <div class="media-tile">
             <div class="media-tile-genre-cover">
-                <h2>BOOK</h2>
-                <div class="media-tile-cover-title">
+                <h2><?= strtoupper($media['type']) ?></h2>
+                <a class="media-tile-cover-title" href="<?= get_media_url($media['id'], $media['type']) ?>">
                     <img src="<?= BASE_URL . '/assets/images/test.jpg' ?>" alt="cover">
                     <p><?php e($media['title']) ?></p>
-                </div>
+                </a>
             </div>
         </div>
     <?php endforeach; ?>
