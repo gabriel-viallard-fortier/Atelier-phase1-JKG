@@ -24,8 +24,9 @@ require_once INCLUDE_PATH . '/helpers.php';
 require_once MODEL_PATH . '/user_model.php';
 require_once MODEL_PATH . '/media_model.php';
 require_once MODEL_PATH . '/book_model.php';
-require_once MODEL_PATH . '/movie_model.php';
 require_once MODEL_PATH . '/game_model.php';
+require_once MODEL_PATH . '/movie_model.php';
+
 
 // Activer l'affichage des erreurs en développement
 // À désactiver en production

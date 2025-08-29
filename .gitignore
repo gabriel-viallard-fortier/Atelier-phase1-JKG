@@ -61,4 +61,6 @@ phpunit.xml.bak
 *.min.css
 *.min.js 
 
-# config/database.php
+config/database.php
+composer.*
+vendor

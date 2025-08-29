@@ -10,8 +10,8 @@ function home_index()
         'title' => 'Accueil',
         'stylesheets' => ['assets/css/home.css']
     ];
-    $media = get_filtered_medias();
-    $data['medias'] = $media;
+    $medias = get_filtered_medias();
+    $data = array_merge($data, $medias);
     load_view_with_layout('home/index', $data);
 }
 
@@ -70,17 +70,4 @@ function home_profile()
     ];
 
     load_view_with_layout('home/profile', $data);
-}
-
-/**
- * Page test
- */
-function home_test()
-{
-    $data = [
-        'title' => 'Page test',
-        'message' => 'Bienvenue sur votre page test',
-    ];
-
-    load_view_with_layout('home/test', $data);
 }
