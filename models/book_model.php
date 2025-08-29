@@ -9,6 +9,7 @@ function insert_new_book($book_data)
                 if (db_execute(
                     $query,
                     [
+                        $book_data['id'],
                         $book_data['title'],
                         $book_data['genre'],
                         $book_data['stock'],
@@ -16,14 +17,14 @@ function insert_new_book($book_data)
                         $book_data['isbn'],
                         $book_data['pages'],
                         $book_data['published_year'],
-                        $book_data['summary']
+                        $book_data['summary'],
                     ]
                 )) {
                     set_flash('success','Média ajouté avec succès');
                     return db_last_insert_id();
                 }
                 return false;
-    }
+}
 
 function get_book_by_id($id)
 {

@@ -15,6 +15,7 @@ function admin_book_add()
             "summary",
         ];
 
+
         foreach ($all_data as $key) {
             if (isset($_POST[$key])) {
                 $book_data[$key] = clean_input($_POST[$key]);
@@ -69,17 +70,17 @@ function admin_game_add()
             "editor",
             "plateform",
             "pegi",
+            "description",
         ];
-
         foreach ($all_data as $key) {
             if (isset($_POST[$key])) {
                 $game_data[$key] = clean_input($_POST[$key]);
             } else {
+                echo $key;
                 set_flash("error", "Veuillez remplir tous les champs");
                 return false;
             }
         }
-
         insert_new_game($game_data);
     }
 

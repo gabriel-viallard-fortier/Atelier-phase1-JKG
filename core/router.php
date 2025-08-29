@@ -70,4 +70,3 @@ function load_404() {
     require_once VIEW_PATH . '/errors/404.php';
 }
 
- 
