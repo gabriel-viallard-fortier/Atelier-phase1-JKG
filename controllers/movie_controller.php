@@ -9,6 +9,7 @@ function movie_display()
     $movie_id = escape($_GET["id"]);
     $movie_info = get_movie_by_id($movie_id);
     if (!$movie_info) {
+        error_logging(ErrorType::Warning, "Unable to find movie with id#" . $movie_id);
         redirect('errors/404');
     }
 

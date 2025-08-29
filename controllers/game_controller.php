@@ -9,6 +9,7 @@ function game_display()
     $game_id = escape($_GET["id"]);
     $game_info = get_game_by_id($game_id);
     if (!$game_info) {
+        error_logging(ErrorType::Warning, "Unable to find game with id#" . $game_id);
         redirect('errors/404');
     }
 
